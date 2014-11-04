@@ -1,0 +1,28 @@
+@(message: String)
+
+@main("11playpractice") {
+
+	<h2>11playpractice</h2>
+	
+	<p>
+    index
+    </p>
+    
+	<br />
+    @message
+    <br />
+    <button class="buttonjs" type="button" onlick="myFunction()">display some js</button>
+    <br />
+    <p id="demo"> Before click </p>
+    
+    <script>
+
+function myFunction() {
+	document.getElementById("demo").innerHTML = "After, Paragraph changed";
+}
+</script>
+<ul>
+	<li><a href="#" onclick="alert('truc2')">truc2</a></li>
+</ul>
+
+}
