@@ -2,15 +2,78 @@
 
 @main("11playpractice") {
 
-	<h2>11playpractice</h2>
+	<h2>11playpractice, view2</h2>
 	
-	<p>
+	<p id=pjs>
     view2
     </p>
     
-	<br />
-    @message
+    <button type='button' onclick="function1()">func1</button>
+    <button type='button' onclick="function2()">func2</button>
+	<button type='button' onclick="function3()">show list</button>
+	<button type='button' onclick="f4()">show list+1</button>
+	
+	<button type='button' onclick="f5()">list car</button>
+	<button type='button' onclick="f6()">add zx</button>
+	<button type='button' onclick="f7()">show attribute</button>
+	
+	<br /><input type="text" id="toEnter">
+
+		<p id="demo">demo </p>
+    
     <br />
     <br />
+    
+    <script type="text/javascript">
+		function function1() {
+			document.getElementById("pjs").innerHTML = "function 1";
+		}
+		function function2() {
+			document.getElementById("pjs").innerHTML = "function 2";
+		}
+
+		function function3() {
+		    var index;
+		    var text = "<ul>";
+		    var fruits = ["Banana", "Orange", "Apple", "Mango"];
+		    for (index = 0; index < fruits.length; index++) {
+		        text += "<li>" + fruits[index] + "</li>";
+		    }
+		    text += "</ul>";
+		    document.getElementById("demo").innerHTML = text;
+		}
+
+		var animal = ["cat", "dog", "bird"];
+
+		var f4 = (function () {
+			var animal2 = animal;
+			
+			return function() {
+				var i;
+			    var text = "<ul>";
+			    animal2.push("duke");
+			    for (i = 0; i < animal2.length; i++) {
+			        text += "<li>" + animal2[i] + "</li>";
+			    }
+			    text += "</ul>";
+			    document.getElementById("pjs").innerHTML = text;
+			};
+		})();
+
+		var car = ["clio", "ax"];
+		
+		function f5() {
+			document.getElementById("pjs").innerHTML = car;
+		}
+		function f6() {
+			car.push(document.getElementById("toEnter").value);
+		}
+
+		var person = { firstname: "tom", lastname: "zozo"};
+		function f7() {
+			document.getElementById("pjs").innerHTML = person.firstname;
+		}
+		
+    </script>
 
 }
